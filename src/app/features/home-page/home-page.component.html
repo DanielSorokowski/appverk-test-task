@@ -1,0 +1,15 @@
+
+@if (userData$ | async; as user) {
+  <app-header></app-header>
+  <div class="home">
+    <h1 class="home__title">Welcome {{ getUserRoleName(user.role) }}</h1>
+    <p>{{ user.name }}</p>
+    <p>{{ user.email }}</p>
+  </div>
+} @else {
+  <app-loader></app-loader>
+}
+
+
+
+

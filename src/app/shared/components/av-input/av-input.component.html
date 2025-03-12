@@ -1,0 +1,25 @@
+<label class="av-input">
+  <p class="av-input__label">{{ label }}</p>
+  <input
+    class="av-input__control"
+    [ngClass]="{
+      'av-input__control--error': hasError()
+    }"
+    [value]="innerValue"
+    (input)="onInputChange($event)"
+    [type]="type"
+    [placeholder]="placeholder"
+  >
+
+  @if (isInitTypePassword()) {
+    <button class="av-input__show-password" (click)="handleShowPassword()" type="button">
+      <img [src]="isChangedTypePassword() ? 'assets/img/eye-close.svg' : 'assets/img/eye-open.svg'">
+    </button>
+  }
+
+  @if (hasError()) {
+    <div class="av-input__error">
+      {{ getErrorMessage() }}
+    </div>
+  }
+</label>

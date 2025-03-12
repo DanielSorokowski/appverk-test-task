@@ -1,0 +1,30 @@
+<div class="login">
+  <div class="login__content">
+    <img src="assets/img/logo.png" class="login__logo">
+    <div>
+      <h1 class="login__title">Welcome back</h1>
+      <h2 class="login__subtitle">Welcome back! Please enter your details</h2>
+    </div>
+    @if (isLoading) {
+      <app-loader></app-loader>
+    } @else {
+      <form [formGroup]="loginForm"  class="login__form">
+        <app-av-input
+          formControlName="email"
+          label="Email"
+          placeholder="Enter your email"
+          #firstInput
+        ></app-av-input>
+        <app-av-input
+          formControlName="password"
+          label="Password"
+          placeholder="Password"
+          type="password"
+        ></app-av-input>
+        <button (click)="handleSubmitLogin()" class="av-button">
+          Sign In
+        </button>
+      </form>
+    }
+  </div>
+</div>

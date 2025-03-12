@@ -1,0 +1,46 @@
+@import '../../../../styles/variables';
+
+.av-input {
+  display: grid;
+  position: relative;
+  &__label {
+    font-size: 16px;
+    color: $grey;
+  }
+
+  &__error {
+    font-size: 12px;
+    color: $red;
+  }
+
+  &__show-password {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    position: absolute;
+    top: 30px;
+    right: 10px;;
+  }
+
+  &__control {
+    padding: 7px;
+    background: $light-grey;
+    border: 1px solid $light-grey;
+    color: $black;
+    font-size: 16px;
+    height: 40px;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      border-color: $orange;
+    }
+
+    &--error {
+      border-color: $red;
+    }
+  }
+}
